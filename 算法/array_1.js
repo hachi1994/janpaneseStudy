@@ -1,3 +1,5 @@
+'use strict';
+x = 10;
 // 合并2个有序数组
 let foo = function (arr1 = [], n1, arr2 = [], n2) {
     let i = n1 - 1, j = n2 - 1, h = n1 + n2 - 1;
@@ -31,7 +33,15 @@ let foo2 = function (arr = [-1, 0, 1, 2, -1, -4]) {
             continue;
         }
         while (j < k) {
-
+            if(nums[i] + nums[j] + nums[k] < 0) {
+                j++;
+                while(j<k&&nums[j] === nums[j-1]) {
+                    j++;
+                }
+            }else if(nums[i] + nums[j] + nums[k] >0) {
+                k--;
+                while(j<k&&nums[k] === num){}
+            }
         }
     }
 
